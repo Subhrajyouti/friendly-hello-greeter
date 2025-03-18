@@ -5,6 +5,7 @@ import {
   ChevronDown, 
   ChevronUp, 
   ExternalLink,
+  Copy,
   Eye,
   Target,
   Database,
@@ -23,7 +24,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
+import { toast } from "sonner";
 const DataJobMarketProject = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -71,6 +72,13 @@ const DataJobMarketProject = () => {
       [key]: !prev[key]
     }));
   };
+
+// Function to copy code to clipboard
+const copyToClipboard = (text: string) => {
+  navigator.clipboard.writeText(text);
+  toast.success("Code copied to clipboard!");
+};
+
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -235,11 +243,26 @@ const DataJobMarketProject = () => {
                           <AccordionItem value="code1">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
-                                <code>
-                                  {`# Code will be uploaded later`}
-                                </code>
-                              </pre>
+                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                                <button 
+                                  onClick={() => copyToClipboard(`fig, ax = plt.subplots(len(job_titles), 1)
+for i, job_title in enumerate(job_titles):
+    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
+    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
+plt.show()`)}
+                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                                  aria-label="Copy code"
+                                >
+                                  <Copy size={16} />
+                                </button>
+                                <pre className="text-sm">
+                                  {`fig, ax = plt.subplots(len(job_titles), 1)
+for i, job_title in enumerate(job_titles):
+    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
+    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
+plt.show()`}
+                                </pre>
+                              </div>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
