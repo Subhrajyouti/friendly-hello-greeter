@@ -362,11 +362,26 @@ plt.show()`}
                           <AccordionItem value="code3">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
-                                <code>
-                                  {`# Code will be uploaded later`}
-                                </code>
-                              </pre>
+                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                                <button 
+                                  onClick={() => copyToClipboard(`fig, ax = plt.subplots(len(job_titles), 1)
+for i, job_title in enumerate(job_titles):
+    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
+    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
+plt.show()`)}
+                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                                  aria-label="Copy code"
+                                >
+                                  <Copy size={16} />
+                                </button>
+                                <pre className="text-sm">
+                                  {`fig, ax = plt.subplots(len(job_titles), 1)
+for i, job_title in enumerate(job_titles):
+    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
+    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
+plt.show()`}
+                                </pre>
+                              </div>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
