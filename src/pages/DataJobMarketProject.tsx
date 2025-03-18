@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { 
@@ -26,6 +25,7 @@ import Footer from "@/components/Footer";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "sonner";
+
 const DataJobMarketProject = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -79,7 +79,6 @@ const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text);
   toast.success("Code copied to clipboard!");
 };
-
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -382,7 +381,7 @@ plt.show()
                             <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
                                 <button 
                                   onClick={() => copyToClipboard(`sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
-ticks_x = plt.FuncFormatter(lambda y, pos: f'${Math.floor(y/1000)}K')
+ticks_x = plt.FuncFormatter(lambda x, pos: f'${Math.floor(x/1000)}K')
 plt.gca().xaxis.set_major_formatter(ticks_x)
 plt.show()`)}
                                   className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
@@ -392,7 +391,7 @@ plt.show()`)}
                                 </button>
                                 <pre className="text-sm">
                                   {`sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
-ticks_x = plt.FuncFormatter(lambda y, pos: f'${Math.floor(y/1000)}K')
+ticks_x = plt.FuncFormatter(lambda x, pos: f'${Math.floor(x/1000)}K')
 plt.gca().xaxis.set_major_formatter(ticks_x)
 plt.show()`}
                                 </pre>
