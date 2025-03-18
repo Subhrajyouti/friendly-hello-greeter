@@ -323,14 +323,10 @@ plt.show()`)}
                                   <Copy size={16} />
                                 </button>
                                 <pre className="text-sm">
-                                  {`
-from matplotlib.ticker import PercentFormatter
-
+                                  {`from matplotlib.ticker import PercentFormatter
 df_plot = df_DA_US_percent.iloc[:, :5]
 sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
-
 plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
-
 plt.show()
 `}
                                 </pre>
@@ -396,11 +392,9 @@ plt.show()`)}
                                 </button>
                                 <pre className="text-sm">
                                   {`sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
-
 ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
 plt.gca().xaxis.set_major_formatter(ticks_x)
-plt.show()
-`}
+plt.show()`}
                                 </pre>
                               </div>
                             </AccordionContent>
@@ -463,17 +457,12 @@ plt.show()`)}
                                   <Copy size={16} />
                                 </button>
                                 <pre className="text-sm">
-                                  {`
-fig, ax = plt.subplots(2, 1)  
-
+                                  {`fig, ax = plt.subplots(2, 1)  
 # Top 10 Highest Paid Skills for Data Analysts
 sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
-
 # Top 10 Most In-Demand Skills for Data Analystsr')
 sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
-
-plt.show()
-`}
+plt.show()`}
                                 </pre>
                               </div>
                             </AccordionContent>
@@ -538,11 +527,9 @@ plt.show()
                                 </button>
                                 <pre className="text-sm">
                                   {`from adjustText import adjust_text
-import matplotlib.pyplot as plt
-
+                                  import matplotlib.pyplot as plt
 plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
-plt.show()
-`}
+plt.show()`}
                                 </pre>
                               </div>
                             </AccordionContent>
