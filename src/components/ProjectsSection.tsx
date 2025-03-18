@@ -1,4 +1,3 @@
-
 import { ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +14,14 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: 9,
+    title: "New Project",
+    description: "A template for a new project that you can customize with your own content",
+    image: "/placeholder.svg",
+    tags: ["Template", "Project", "Placeholder", "Custom"],
+    slug: "new-project"
+  },
   {
     id: 8,
     title: "Data Job Market Analysis",
@@ -102,6 +109,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
     ? "/goodcabs-analysis" 
     : project.slug === "data-job-market-analysis"
     ? "/data-job-market-analysis"
+    : project.slug === "new-project"
+    ? "/new-project"
     : `/project/${project.slug}`;
 
   // Determine if external link (opens in new tab) or internal navigation
