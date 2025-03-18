@@ -1,11 +1,27 @@
-import { useState, useEffect } from "react";
+[1:45 pm, 18/3/2025] Subhra: <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                            <button 
+                              onClick={() => copyToClipboard(`SELECT DATE_TRUNC('month', date) AS month, 
+       SUM(fare_amount) AS total_revenue
+FROM fact_trips
+GROUP BY month
+ORDER BY month;`)}
+                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                              aria-label="Copy code"
+                            >
+                              <Copy size={16} />
+                            </button>
+                            <pre className="text-sm">
+                              {`SELECT DATE_TRUNC('month', date) AS month, 
+       SUM(fare_amount) AS total_revenue
+FROM fact_trips
+GROUP BY mo…
+[5:28 pm, 18/3/2025] Subhra: import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { 
   Github, 
   ChevronDown, 
   ChevronUp, 
   ExternalLink,
-  Copy,
   Eye,
   Target,
   Database,
@@ -19,47 +35,12 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import DataJobMarketSidebar from "@/components/DataJobMarketSidebar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { toast } from "sonner";
 
-// Create simple component versions if they don't exist in your project
-const DataJobMarketSidebar = ({ sticky = false }) => (
-  <div className={`bg-background border-b ${sticky ? "py-2" : "py-4"}`}>
-    <div className="container flex items-center gap-6 overflow-x-auto">
-      <a href="#overview" className="text-sm font-medium whitespace-nowrap hover:text-primary">Overview</a>
-      <a href="#objectives" className="text-sm font-medium whitespace-nowrap hover:text-primary">Objectives</a>
-      <a href="#data-description" className="text-sm font-medium whitespace-nowrap hover:text-primary">Data</a>
-      <a href="#methodology" className="text-sm font-medium whitespace-nowrap hover:text-primary">Methodology</a>
-      <a href="#key-insights" className="text-sm font-medium whitespace-nowrap hover:text-primary">Key Insights</a>
-      <a href="#challenges" className="text-sm font-medium whitespace-nowrap hover:text-primary">Challenges</a>
-      <a href="#project-files" className="text-sm font-medium whitespace-nowrap hover:text-primary">Files</a>
-    </div>
-  </div>
-);
-
-const Navbar = () => (
-  <div className="bg-background border-b">
-    <div className="container flex items-center justify-between h-16">
-      <div className="font-bold">Data Analysis Portfolio</div>
-      <div className="flex gap-4">
-        <a href="/" className="text-sm font-medium hover:text-primary">Home</a>
-        <a href="/projects" className="text-sm font-medium hover:text-primary">Projects</a>
-        <a href="/about" className="text-sm font-medium hover:text-primary">About</a>
-      </div>
-    </div>
-  </div>
-);
-
-const Footer = () => (
-  <div className="bg-muted py-6">
-    <div className="container text-center text-sm text-muted-foreground">
-      © 2025 Data Analysis Portfolio. All rights reserved.
-    </div>
-  </div>
-);
-
-// Main component
 const DataJobMarketProject = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -108,28 +89,6 @@ const DataJobMarketProject = () => {
     }));
   };
 
-  // Function to copy code to clipboard
-  const copyToClipboard = (text: string) => {
-    try {
-      navigator.clipboard.writeText(text);
-      toast.success("Code copied to clipboard!");
-    } catch (error) {
-      console.error("Failed to copy code:", error);
-      toast.error("Failed to copy code");
-    }
-  };
-
-  // Check if images exist or use placeholders
-  const getImageUrl = (path: string) => {
-    try {
-      // Try to use the provided path
-      return path;
-    } catch (error) {
-      // Fallback to a placeholder
-      return "https://placehold.co/600x400?text=Data+Analysis";
-    }
-  };
-
   return (
     <div className="flex min-h-screen flex-col">
       {/* Main Navigation */}
@@ -138,7 +97,7 @@ const DataJobMarketProject = () => {
       {/* Hero Section - Added more top padding to move title further down */}
       <div className="relative h-[65vh] w-full">
         <img 
-          src={getImageUrl("/data_science.jpg")} 
+          src="/data_science.jpg" 
           alt="Data Job Market Analysis" 
           className="h-full w-full object-cover"
         />
@@ -242,7 +201,7 @@ const DataJobMarketProject = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src={getImageUrl("/data.jpg")} 
+                    src="/data.jpg" 
                     alt="Data Model" 
                     className="w-full max-w-xl rounded-lg border border-border"
                   />
@@ -293,33 +252,18 @@ const DataJobMarketProject = () => {
                           <AccordionItem value="code1">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                                <button 
-                                  onClick={() => copyToClipboard(`fig, ax = plt.subplots(len(job_titles), 1)
-for i, job_title in enumerate(job_titles):
-    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
-    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
-plt.show()`)}
-                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                                  aria-label="Copy code"
-                                >
-                                  <Copy size={16} />
-                                </button>
-                                <pre className="text-sm">
-                                  {`fig, ax = plt.subplots(len(job_titles), 1)
-for i, job_title in enumerate(job_titles):
-    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
-    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
-plt.show()`}
-                                </pre>
-                              </div>
+                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+                                <code>
+                                  {# Code will be uploaded later}
+                                </code>
+                              </pre>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
                         
                         <div className="rounded-lg overflow-hidden border">
                           <img 
-                            src={getImageUrl("/q1.jpg")} 
+                            src="/q1.jpg" 
                             alt="Most demanded skills chart" 
                             className="w-full"
                           />
@@ -360,37 +304,18 @@ plt.show()`}
                           <AccordionItem value="code2">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                                <button 
-                                  onClick={() => copyToClipboard(`from matplotlib.ticker import PercentFormatter
-df_plot = df_DA_US_percent.iloc[:, :5]
-sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
-plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
-                                  onClick={() => copyToClipboard(`from matplotlib.ticker import PercentFormatter
-df_plot = df_DA_US_percent.iloc[:, :5]
-sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
-plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
-plt.show()`)}
-                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                                  aria-label="Copy code"
-                                >
-                                  <Copy size={16} />
-                                </button>
-                                <pre className="text-sm">
-                                  {`from matplotlib.ticker import PercentFormatter
-df_plot = df_DA_US_percent.iloc[:, :5]
-sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
-plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
-plt.show()`}
-                                </pre>
-                              </div>
+                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+                                <code>
+                                  {# Code will be uploaded later}
+                                </code>
+                              </pre>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
                         
                         <div className="rounded-lg overflow-hidden border">
                           <img 
-                            src={getImageUrl("/q2.jpg")} 
+                            src="/q2.jpg" 
                             alt="Skills trending chart" 
                             className="w-full"
                           />
@@ -431,31 +356,18 @@ plt.show()`}
                           <AccordionItem value="code3">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                                <button 
-                                  onClick={() => copyToClipboard(`sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
-ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
-plt.gca().xaxis.set_major_formatter(ticks_x)
-plt.show()`)}
-                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                                  aria-label="Copy code"
-                                >
-                                  <Copy size={16} />
-                                </button>
-                                <pre className="text-sm">
-                                  {`sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
-ticks_x = plt.FuncFormatter(lambda x, pos: f'${Math.floor(x/1000)}K')
-plt.gca().xaxis.set_major_formatter(ticks_x)
-plt.show()`}
-                                </pre>
-                              </div>
+                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+                                <code>
+                                  {# Code will be uploaded later}
+                                </code>
+                              </pre>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
                         
                         <div className="rounded-lg overflow-hidden border">
                           <img 
-                            src={getImageUrl("/q3.jpg")} 
+                            src="/q3.jpg" 
                             alt="Salary data chart" 
                             className="w-full"
                           />
@@ -496,36 +408,18 @@ plt.show()`}
                           <AccordionItem value="code4">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                                <button 
-                                  onClick={() => copyToClipboard(`fig, ax = plt.subplots(2, 1)  
-# Top 10 Highest Paid Skills for Data Analysts
-sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
-# Top 10 Most In-Demand Skills for Data Analystsr')
-sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
-plt.show()`)}
-                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                                  aria-label="Copy code"
-                                >
-                                  <Copy size={16} />
-                                </button>
-                                <pre className="text-sm">
-                                  {`fig, ax = plt.subplots(2, 1)  
-# Top 10 Highest Paid Skills for Data Analysts
-sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
-# Top 10 Most In-Demand Skills for Data Analysts
-# Top 10 Most In-Demand Skills for Data Analysts
-sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
-plt.show()`}
-                                </pre>
-                              </div>
+                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+                                <code>
+                                  {# Code will be uploaded later}
+                                </code>
+                              </pre>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
                         
                         <div className="rounded-lg overflow-hidden border">
                           <img 
-                            src={getImageUrl("/q4.jpg")} 
+                            src="/q4.jpg" 
                             alt="High-paid skills chart" 
                             className="w-full"
                           />
@@ -566,35 +460,18 @@ plt.show()`}
                           <AccordionItem value="code5">
                             <AccordionTrigger>View Code</AccordionTrigger>
                             <AccordionContent>
-                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                                <button 
-                                  onClick={() => copyToClipboard(`import matplotlib.pyplot as plt
-
-plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
-plt.xlabel('Demand Percentage')
-plt.ylabel('Median Salary ($)')
-plt.show()`)}
-                                  className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                                  aria-label="Copy code"
-                                >
-                                  <Copy size={16} />
-                                </button>
-                                <pre className="text-sm">
-                                  {`import matplotlib.pyplot as plt
-
-plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
-plt.xlabel('Demand Percentage')
-plt.ylabel('Median Salary ($)')
-plt.show()`}
-                                </pre>
-                              </div>
+                              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-xs">
+                                <code>
+                                  {# Code will be uploaded later}
+                                </code>
+                              </pre>
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
                         
                         <div className="rounded-lg overflow-hidden border">
                           <img 
-                            src={getImageUrl("/q5.jpg")} 
+                            src="/q5.jpg" 
                             alt="Optimal skills chart" 
                             className="w-full"
                           />
