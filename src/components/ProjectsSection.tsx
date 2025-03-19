@@ -19,7 +19,7 @@ const projects: Project[] = [
     id: 9,
     title: "Monday Coffee Business Expansion Analysis",
     description: "Analyzing city performance to determine the best locations for business expansion using data-driven insights",
-    image: "/data_science.jpg",
+    image: "/coffee1.jpg",
     tags: ["SQL", "Data Analysis", "Weighted Scoring", "Decision Making"],
     slug: "new-project"
   },

@@ -28,8 +28,26 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import GoodCabsSidebar from "@/components/GoodCabsSidebar";
 import { toast } from "sonner";
+
+// Custom sidebar navigation for Monday Coffee project
+const MondayCoffeeSidebar = () => {
+  return (
+    <div className="sticky top-[60px] z-10 w-full bg-background/95 backdrop-blur-sm border-b">
+      <div className="container max-w-7xl mx-auto px-4">
+        <div className="flex overflow-x-auto py-2 gap-4 no-scrollbar">
+          <a href="#overview" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Overview</a>
+          <a href="#objective" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Objective</a>
+          <a href="#data-setup" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Data Description</a>
+          <a href="#methodology" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Methodology</a>
+          <a href="#top-cities" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Top Cities</a>
+          <a href="#ad-hoc-requests" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Ad Hoc Requests</a>
+          <a href="#conclusion" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Conclusion</a>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const NewProject = () => {
   // Scroll to top when component mounts
@@ -51,7 +69,7 @@ const NewProject = () => {
         {/* Hero Section with Cover Image */}
         <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
           <img 
-            src="/data_science.jpg" 
+            src="/coffee1.jpg" 
             alt="Monday Coffee Business Analysis" 
             className="w-full h-full object-cover brightness-[0.7]"
           />
@@ -81,7 +99,7 @@ const NewProject = () => {
                 className="bg-blue-600/90 hover:bg-blue-700 text-white border-none rounded-md"
               >
                 <a 
-                  href="https://github.com/yourusername/monday-coffee-analysis" 
+                  href="https://github.com/Subhrajyouti/Monday_cofee_sales_store_expansion/tree/main" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
@@ -94,8 +112,8 @@ const NewProject = () => {
           </div>
         </div>
 
-        {/* Horizontal Navigation Bar */}
-        <GoodCabsSidebar />
+        {/* Horizontal Navigation Bar - Updated with custom sidebar */}
+        <MondayCoffeeSidebar />
 
         {/* Main Content */}
         <div className="container max-w-7xl mx-auto px-4 py-8">
@@ -211,7 +229,7 @@ const NewProject = () => {
                 
                 <div className="bg-card/5 p-2 rounded-md overflow-hidden">
                   <img 
-                    src="/placeholder.svg" 
+                    src="/erd.png" 
                     alt="Data Model Schema" 
                     className="w-full h-auto rounded-md shadow-md border border-border/50" 
                   />
@@ -344,7 +362,7 @@ const NewProject = () => {
 
                 <div className="bg-card/5 p-2 rounded-md overflow-hidden">
                   <img 
-                    src="/placeholder.svg" 
+                    src="/cityscore.png" 
                     alt="Final Visualization" 
                     className="w-full h-auto rounded-md shadow-md border border-border/50" 
                   />
@@ -516,7 +534,7 @@ const NewProject = () => {
               <div className="space-y-8">
                 <Card className="overflow-hidden border border-border/50 shadow-md hover:shadow-xl transition-all">
                   <img 
-                    src="/data_science.jpg" 
+                    src="/coffee2.jpg" 
                     alt="Monday Coffee Analysis" 
                     className="w-full h-48 object-cover"
                   />
