@@ -98,7 +98,7 @@ const NewProject = () => {
         const element = document.getElementById(id);
         if (element) {
           // Reduce the offset to prevent the title from scrolling too far up
-          const yOffset = -80; // Changed from -150 to -80
+          const yOffset = 0; // Changed from -150 to -80
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
