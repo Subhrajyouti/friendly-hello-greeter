@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -36,13 +35,34 @@ const MondayCoffeeSidebar = () => {
     <div className="sticky top-[60px] z-10 w-full bg-background/95 backdrop-blur-sm border-b">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex overflow-x-auto py-2 gap-4 no-scrollbar">
-          <a href="#overview" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Overview</a>
-          <a href="#objective" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Objective</a>
-          <a href="#data-setup" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Data Description</a>
-          <a href="#methodology" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Methodology</a>
-          <a href="#top-cities" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Top Cities</a>
-          <a href="#ad-hoc-requests" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Ad Hoc Requests</a>
-          <a href="#conclusion" className="whitespace-nowrap text-sm hover:text-primary transition-colors px-1 py-2">Conclusion</a>
+          <a href="#overview" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <Eye className="h-4 w-4" />
+            Overview
+          </a>
+          <a href="#objective" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <Target className="h-4 w-4" />
+            Objective
+          </a>
+          <a href="#data-setup" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <Database className="h-4 w-4" />
+            Data Description
+          </a>
+          <a href="#methodology" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <ListChecks className="h-4 w-4" />
+            Methodology
+          </a>
+          <a href="#top-cities" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <Rocket className="h-4 w-4" />
+            Top Cities
+          </a>
+          <a href="#ad-hoc-requests" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <Database className="h-4 w-4" />
+            Ad Hoc Requests
+          </a>
+          <a href="#conclusion" className="whitespace-nowrap text-sm font-bold hover:text-primary transition-colors px-2 py-2 flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4" />
+            Conclusion
+          </a>
         </div>
       </div>
     </div>
@@ -53,6 +73,32 @@ const NewProject = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Fix the scroll offset by changing the value from -150 to a smaller number
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          // Reduce the offset to prevent the title from scrolling too far up
+          const yOffset = -80; // Changed from -150 to -80
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    };
+
+    // Handle initial hash if present
+    if (window.location.hash) {
+      setTimeout(handleHashChange, 100);
+    }
+
+    // Add event listener for future hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const copyToClipboard = (text: string) => {
@@ -81,7 +127,7 @@ const NewProject = () => {
                   Back to Portfolio
                 </Link>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">📊 Monday Coffee Business Expansion Analysis</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Monday Coffee Business Expansion Analysis</h1>
               <p className="text-xl text-white/90 mb-6 max-w-2xl">
                 Analyzing city performance to determine the best locations for business expansion using data-driven insights.
               </p>
@@ -594,55 +640,4 @@ const NewProject = () => {
                         <Link to="/project/realtime-data-pipeline" className="group flex items-start gap-3 hover:bg-accent/50 p-2 rounded-md transition-colors">
                           <LineChart className="h-5 w-5 text-primary mt-0.5" />
                           <div>
-                            <h4 className="text-sm font-medium group-hover:text-primary transition-colors">Real-time Data Processing Pipeline</h4>
-                            <p className="text-xs text-muted-foreground">Scalable pipeline for streaming data</p>
-                          </div>
-                        </Link>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-// Top City Card Component
-const TopCityCard = ({ position, city, description }: { position: string; city: string; description: string }) => (
-  <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-    <CardContent className="p-6">
-      <div className="flex items-center mb-2">
-        <span className="text-3xl mr-3">{position}</span>
-        <h3 className="font-medium text-xl">{city}</h3>
-      </div>
-      <p className="text-sm text-muted-foreground">{description}</p>
-    </CardContent>
-  </Card>
-);
-
-// Feature Card Component (kept for consistency with other sections)
-const FeatureCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-    <CardContent className="p-6">
-      <h3 className="font-medium mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground">{children}</p>
-    </CardContent>
-  </Card>
-);
-
-// Insight Card Component (kept for consistency with other sections)
-const InsightCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-    <CardContent className="p-6">
-      <h3 className="font-medium mb-2">{title}</h3>
-      <div className="text-sm text-muted-foreground">{children}</div>
-    </CardContent>
-  </Card>
-);
-
-export default NewProject;
+                            <h4 className="text-sm font-medium
