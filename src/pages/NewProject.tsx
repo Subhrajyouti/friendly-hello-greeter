@@ -429,235 +429,312 @@ const NewProject = () => {
                 </div>
               </section>
                 
-              {/* Ad Hoc Requests Section */}
+              {/* Ad Hoc Requests Section - Updated with 10 business questions */}
               <section id="ad-hoc-requests" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
                   <Database className="text-primary" /> Ad Hoc Requests
                 </h2>
                 
-                <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all mb-8">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium mb-4">🔹 Question 1: [Placeholder for question]</h3>
-                    
-                    <Accordion type="single" collapsible className="w-full mb-4">
-                      <AccordionItem value="question-1-sql">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          SQL Query
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                            <button 
-                              onClick={() => copyToClipboard("-- SQL query will be added here")}
-                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                              aria-label="Copy code"
-                            >
-                              <Copy size={16} />
-                            </button>
-                            <pre className="text-sm">
-                              {`-- SQL query will be added here`}
-                            </pre>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                    
-                    <div className="mb-4">
-                      <h4 className="text-base font-medium mb-2">Visualization:</h4>
-                      <img 
-                        src="/q1.jpg" 
-                        alt="Question 1 Visualization" 
-                        className="w-full rounded-md border border-border/50" 
-                      />
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-base font-medium mb-2">Insights:</h4>
-                      <p className="text-muted-foreground">Insights will be added soon.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all mb-8">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium mb-4">🔹 Question 2: [Placeholder for question]</h3>
-                    
-                    <Accordion type="single" collapsible className="w-full mb-4">
-                      <AccordionItem value="question-2-sql">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          SQL Query
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                            <button 
-                              onClick={() => copyToClipboard("-- SQL query will be added here")}
-                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                              aria-label="Copy code"
-                            >
-                              <Copy size={16} />
-                            </button>
-                            <pre className="text-sm">
-                              {`-- SQL query will be added here`}
-                            </pre>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                    
-                    <div className="mb-4">
-                      <h4 className="text-base font-medium mb-2">Visualization:</h4>
-                      <img 
-                        src="/q2.jpg" 
-                        alt="Question 2 Visualization" 
-                        className="w-full rounded-md border border-border/50" 
-                      />
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-base font-medium mb-2">Insights:</h4>
-                      <p className="text-muted-foreground">Insights will be added soon.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all mb-8">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium mb-4">🔹 Question 3: [Placeholder for question]</h3>
-                    
-                    <Accordion type="single" collapsible className="w-full mb-4">
-                      <AccordionItem value="question-3-sql">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          SQL Query
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                            <button 
-                              onClick={() => copyToClipboard("-- SQL query will be added here")}
-                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                              aria-label="Copy code"
-                            >
-                              <Copy size={16} />
-                            </button>
-                            <pre className="text-sm">
-                              {`-- SQL query will be added here`}
-                            </pre>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                    
-                    <div className="mb-4">
-                      <h4 className="text-base font-medium mb-2">Visualization:</h4>
-                      <img 
-                        src="/q3.jpg" 
-                        alt="Question 3 Visualization" 
-                        className="w-full rounded-md border border-border/50" 
-                      />
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-base font-medium mb-2">Insights:</h4>
-                      <p className="text-muted-foreground">Insights will be added soon.</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="space-y-6">
+                  {/* Question 1 */}
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q1: Coffee Consumers Count</h3>
+                      <p className="text-muted-foreground mb-4">How many people in each city are estimated to consume coffee, given that 25% of the population does?</p>
+                      
+                      <Accordion type="single" collapsible className="w-full mb-4">
+                        <AccordionItem value="question-1-sql">
+                          <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
+                            SQL Query
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                              <button 
+                                onClick={() => copyToClipboard(`SELECT 
+    city_name,
+    ROUND((population * 0.25)/1000000, 2) AS coffee_consumers_in_millions,
+    city_rank
+FROM city
+ORDER BY 2 DESC;`)}
+                                className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                                aria-label="Copy code"
+                              >
+                                <Copy size={16} />
+                              </button>
+                              <pre className="text-sm">
+{`SELECT 
+    city_name,
+    ROUND((population * 0.25)/1000000, 2) AS coffee_consumers_in_millions,
+    city_rank
+FROM city
+ORDER BY 2 DESC;`}
+                              </pre>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
+                        <img 
+                          src="/cq1.png" 
+                          alt="Coffee Consumers Count Query Result" 
+                          className="w-full rounded-md border border-border/50" 
+                        />
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Question 2 */}
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q2: Total Revenue from Coffee Sales</h3>
+                      <p className="text-muted-foreground mb-4">What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?</p>
+                      
+                      <Accordion type="single" collapsible className="w-full mb-4">
+                        <AccordionItem value="question-2-sql">
+                          <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
+                            SQL Query
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                              <button 
+                                onClick={() => copyToClipboard(`SELECT 
+    SUM(total) AS total_revenue
+FROM sales
+WHERE 
+    EXTRACT(YEAR FROM sale_date) = 2023
+    AND EXTRACT(QUARTER FROM sale_date) = 4;
+
+SELECT 
+    ci.city_name,
+    SUM(s.total) AS total_revenue
+FROM sales AS s
+JOIN customers AS c ON s.customer_id = c.customer_id
+JOIN city AS ci ON ci.city_id = c.city_id
+WHERE 
+    EXTRACT(YEAR FROM s.sale_date) = 2023
+    AND EXTRACT(QUARTER FROM s.sale_date) = 4
+GROUP BY 1
+ORDER BY 2 DESC;`)}
+                                className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                                aria-label="Copy code"
+                              >
+                                <Copy size={16} />
+                              </button>
+                              <pre className="text-sm">
+{`SELECT 
+    SUM(total) AS total_revenue
+FROM sales
+WHERE 
+    EXTRACT(YEAR FROM sale_date) = 2023
+    AND EXTRACT(QUARTER FROM sale_date) = 4;
+
+SELECT 
+    ci.city_name,
+    SUM(s.total) AS total_revenue
+FROM sales AS s
+JOIN customers AS c ON s.customer_id = c.customer_id
+JOIN city AS ci ON ci.city_id = c.city_id
+WHERE 
+    EXTRACT(YEAR FROM s.sale_date) = 2023
+    AND EXTRACT(QUARTER FROM s.sale_date) = 4
+GROUP BY 1
+ORDER BY 2 DESC;`}
+                              </pre>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
+                        <img 
+                          src="/cq2.png" 
+                          alt="Total Revenue Query Result" 
+                          className="w-full rounded-md border border-border/50" 
+                        />
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Question 3 */}
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q3: Sales Count for Each Product</h3>
+                      <p className="text-muted-foreground mb-4">How many units of each coffee product have been sold?</p>
+                      
+                      <Accordion type="single" collapsible className="w-full mb-4">
+                        <AccordionItem value="question-3-sql">
+                          <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
+                            SQL Query
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                              <button 
+                                onClick={() => copyToClipboard(`SELECT 
+    p.product_name,
+    COUNT(s.sale_id) AS total_orders
+FROM products AS p
+LEFT JOIN sales AS s ON s.product_id = p.product_id
+GROUP BY 1
+ORDER BY 2 DESC;`)}
+                                className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                                aria-label="Copy code"
+                              >
+                                <Copy size={16} />
+                              </button>
+                              <pre className="text-sm">
+{`SELECT 
+    p.product_name,
+    COUNT(s.sale_id) AS total_orders
+FROM products AS p
+LEFT JOIN sales AS s ON s.product_id = p.product_id
+GROUP BY 1
+ORDER BY 2 DESC;`}
+                              </pre>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
+                        <img 
+                          src="/cq3.png" 
+                          alt="Sales Count Query Result" 
+                          className="w-full rounded-md border border-border/50" 
+                        />
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Question 4 */}
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q4: Average Sales Amount per City</h3>
+                      <p className="text-muted-foreground mb-4">What is the average sales amount per customer in each city?</p>
+                      
+                      <Accordion type="single" collapsible className="w-full mb-4">
+                        <AccordionItem value="question-4-sql">
+                          <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
+                            SQL Query
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                              <button 
+                                onClick={() => copyToClipboard(`SELECT 
+    ci.city_name,
+    SUM(s.total) AS total_revenue,
+    COUNT(DISTINCT s.customer_id) AS total_cx,
+    ROUND(SUM(s.total)::NUMERIC / COUNT(DISTINCT s.customer_id)::NUMERIC, 2) AS avg_sale_pr_cx
+FROM sales AS s
+JOIN customers AS c ON s.customer_id = c.customer_id
+JOIN city AS ci ON ci.city_id = c.city_id
+GROUP BY 1
+ORDER BY 2 DESC;`)}
+                                className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                                aria-label="Copy code"
+                              >
+                                <Copy size={16} />
+                              </button>
+                              <pre className="text-sm">
+{`SELECT 
+    ci.city_name,
+    SUM(s.total) AS total_revenue,
+    COUNT(DISTINCT s.customer_id) AS total_cx,
+    ROUND(SUM(s.total)::NUMERIC / COUNT(DISTINCT s.customer_id)::NUMERIC, 2) AS avg_sale_pr_cx
+FROM sales AS s
+JOIN customers AS c ON s.customer_id = c.customer_id
+JOIN city AS ci ON ci.city_id = c.city_id
+GROUP BY 1
+ORDER BY 2 DESC;`}
+                              </pre>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
+                        <img 
+                          src="/cq4.png" 
+                          alt="Average Sales Amount Query Result" 
+                          className="w-full rounded-md border border-border/50" 
+                        />
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </section>
               
               {/* Conclusion Section */}
               <section id="conclusion" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <Rocket className="text-primary" /> Conclusion & Next Steps
+                  <CheckCircle2 className="text-primary" /> Conclusion
                 </h2>
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium mb-3">Key Takeaways</h3>
-                    <ul className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground">
-                      <li>Data-driven approach provides objective criteria for business expansion decisions</li>
-                      <li>Weighted scoring system balances revenue potential with operational costs</li>
-                      <li>Pune, Chennai, and Delhi emerge as the most promising locations for expansion</li>
-                      <li>Each city offers unique advantages in terms of customer base, spending patterns, and cost structure</li>
-                    </ul>
-                    
-                    <h3 className="text-lg font-medium mb-3">Next Steps</h3>
-                    <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                      <li>Conduct detailed market research in the top 3 cities to validate findings</li>
-                      <li>Develop tailored business plans for each expansion location</li>
-                      <li>Assess real estate options and local operational requirements</li>
-                      <li>Create a phased expansion timeline starting with the highest-scoring city</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <div className="text-muted-foreground space-y-4">
+                  <p>
+                    Based on the weighted scoring analysis and ad hoc requests, we can confidently recommend Pune, Chennai, and Delhi as the top three cities for Monday Coffee's business expansion.
+                  </p>
+                  <p>
+                    Each city offers unique advantages in terms of revenue potential, customer base, and cost efficiency. The data-driven approach ensures that these recommendations are backed by solid evidence rather than intuition alone.
+                  </p>
+                  <p>
+                    By prioritizing these cities, Monday Coffee can strategically allocate resources to maximize growth potential while minimizing risks associated with new location openings.
+                  </p>
+                </div>
               </section>
             </div>
             
             {/* Sidebar Column */}
-            <div className="lg:col-span-1">
-              <div className="space-y-8">
-                <Card className="overflow-hidden border border-border/50 shadow-md hover:shadow-xl transition-all">
-                  <img 
-                    src="/coffee2.jpg" 
-                    alt="Monday Coffee Analysis" 
-                    className="w-full h-48 object-cover"
-                  />
-                </Card>
-                
-                <Card className="overflow-hidden border border-border/50 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                  <CardContent className="p-5">
-                    <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
-                      <Lightbulb className="h-4 w-4 text-primary" /> Key Project Insights
-                    </h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2">
-                        <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">Weighted scoring methodology for objective decision-making</span>
+            <div className="hidden lg:block">
+              {/* Project Info Card */}
+              <div className="sticky top-[120px]">
+                <Card className="border border-border/50 overflow-hidden mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-medium text-lg mb-4">Project Details</h3>
+                    <ul className="space-y-3 text-sm">
+                      <li className="flex items-start">
+                        <Monitor className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Tools: </span>
+                          <span>SQL, PostgreSQL, Excel</span>
+                        </div>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">SQL-based analysis of business performance metrics</span>
+                      <li className="flex items-start">
+                        <LineChart className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Visualization: </span>
+                          <span>Tableau, Excel Charts</span>
+                        </div>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">Data-driven city ranking for strategic expansion</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">Balance of revenue potential and operational costs</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                
-                <Card className="overflow-hidden border border-border/50 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                  <CardContent className="p-5">
-                    <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
-                      <Link2 className="h-4 w-4 text-primary" /> Related Projects
-                    </h3>
-                    <ul className="space-y-4">
-                      <li>
-                        <Link to="/goodcabs-analysis" className="group flex items-start gap-3 hover:bg-accent/50 p-2 rounded-md transition-colors">
-                          <LineChart className="h-5 w-5 text-primary mt-0.5" />
-                          <div>
-                            <h4 className="text-sm font-medium group-hover:text-primary transition-colors">GoodCabs Analysis</h4>
-                            <p className="text-xs text-muted-foreground">A data-driven analysis of GoodCabs' operations</p>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/data-job-market-analysis" className="group flex items-start gap-3 hover:bg-accent/50 p-2 rounded-md transition-colors">
-                          <Database className="h-5 w-5 text-primary mt-0.5" />
-                          <div>
-                            <h4 className="text-sm font-medium group-hover:text-primary transition-colors">Data Job Market Analysis</h4>
-                            <p className="text-xs text-muted-foreground">Analysis of data science job market trends</p>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/project/realtime-data-pipeline" className="group flex items-start gap-3 hover:bg-accent/50 p-2 rounded-md transition-colors">
-                          <LineChart className="h-5 w-5 text-primary mt-0.5" />
-                          <div>
-                            <h4 className="text-sm font-medium group-hover:text-primary transition-colors">Realtime Data Pipeline</h4>
-                            <p className="text-xs text-muted-foreground">Building a scalable data pipeline for analytics</p>
-                          </div>
-                        </Link>
+                      <li className="flex items-start">
+                        <GraduationCap className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Skills: </span>
+                          <span>Data Analysis, SQL, Business Intelligence</span>
+                        </div>
                       </li>
                     </ul>
                   </CardContent>
