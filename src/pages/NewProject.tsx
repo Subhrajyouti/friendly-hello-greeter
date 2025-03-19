@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -669,4 +670,83 @@ ORDER BY 2 DESC;`}
                         </AccordionItem>
                       </Accordion>
                       
-                      <div
+                      <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
+                        <img 
+                          src="/cq4.png" 
+                          alt="Average Sales Amount Query Result" 
+                          className="w-full rounded-md border border-border/50" 
+                        />
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </section>
+              
+              {/* Conclusion Section */}
+              <section id="conclusion" className="scroll-mt-24 mb-16">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="text-primary" /> Conclusion
+                </h2>
+                <div className="text-muted-foreground space-y-4">
+                  <p>
+                    Based on the weighted scoring analysis and ad hoc requests, we can confidently recommend Pune, Chennai, and Delhi as the top three cities for Monday Coffee's business expansion.
+                  </p>
+                  <p>
+                    Each city offers unique advantages in terms of revenue potential, customer base, and cost efficiency. The data-driven approach ensures that these recommendations are backed by solid evidence rather than intuition alone.
+                  </p>
+                  <p>
+                    By prioritizing these cities, Monday Coffee can strategically allocate resources to maximize growth potential while minimizing risks associated with new location openings.
+                  </p>
+                </div>
+              </section>
+            </div>
+            
+            {/* Sidebar Column */}
+            <div className="hidden lg:block">
+              {/* Project Info Card */}
+              <div className="sticky top-[120px]">
+                <Card className="border border-border/50 overflow-hidden mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-medium text-lg mb-4">Project Details</h3>
+                    <ul className="space-y-3 text-sm">
+                      <li className="flex items-start">
+                        <Monitor className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Tools: </span>
+                          <span>SQL, PostgreSQL, Excel</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <LineChart className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Visualization: </span>
+                          <span>Tableau, Excel Charts</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <GraduationCap className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Skills: </span>
+                          <span>Data Analysis, SQL, Business Intelligence</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default NewProject;
