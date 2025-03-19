@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -66,6 +67,19 @@ const MondayCoffeeSidebar = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+// Top City Card component
+const TopCityCard = ({ position, city, description }: { position: string; city: string; description: string }) => {
+  return (
+    <Card className="overflow-hidden border border-border/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+      <CardContent className="p-6">
+        <div className="text-4xl mb-4">{position}</div>
+        <h3 className="text-lg font-medium mb-2">{city}</h3>
+        <p className="text-muted-foreground text-sm">{description}</p>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -640,4 +654,22 @@ const NewProject = () => {
                         <Link to="/project/realtime-data-pipeline" className="group flex items-start gap-3 hover:bg-accent/50 p-2 rounded-md transition-colors">
                           <LineChart className="h-5 w-5 text-primary mt-0.5" />
                           <div>
-                            <h4 className="text-sm font-medium
+                            <h4 className="text-sm font-medium group-hover:text-primary transition-colors">Realtime Data Pipeline</h4>
+                            <p className="text-xs text-muted-foreground">Building a scalable data pipeline for analytics</p>
+                          </div>
+                        </Link>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default NewProject;
