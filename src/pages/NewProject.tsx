@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -18,8 +19,7 @@ import {
   BarChart,
   Copy,
   CheckCircle2,
-  Coffee,
-  ChevronDown
+  Coffee
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -429,7 +429,7 @@ const NewProject = () => {
                 </div>
               </section>
                 
-              {/* Ad Hoc Requests Section - Updated to match the requested format */}
+              {/* Ad Hoc Requests Section - Updated with 10 business questions */}
               <section id="ad-hoc-requests" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
                   <Database className="text-primary" /> Ad Hoc Requests
@@ -437,15 +437,11 @@ const NewProject = () => {
                 
                 <div className="space-y-6">
                   {/* Question 1 */}
-                  <Collapsible className="w-full border border-border/50 rounded-md shadow-sm">
-                    <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left font-medium hover:bg-accent/50 rounded-t-md">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-medium">🔎 Q1: Coffee Consumers Count</span>
-                      </div>
-                      <div className="text-sm text-muted-foreground">How many people in each city are estimated to consume coffee, given that 25% of the population does?</div>
-                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="p-4 pt-0 border-t border-border/50">
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q1: Coffee Consumers Count</h3>
+                      <p className="text-muted-foreground mb-4">How many people in each city are estimated to consume coffee, given that 25% of the population does?</p>
+                      
                       <Accordion type="single" collapsible className="w-full mb-4">
                         <AccordionItem value="question-1-sql">
                           <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
@@ -479,25 +475,27 @@ ORDER BY 2 DESC;`}
                       </Accordion>
                       
                       <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
                         <img 
                           src="/cq1.png" 
                           alt="Coffee Consumers Count Query Result" 
                           className="w-full rounded-md border border-border/50" 
                         />
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
                   
                   {/* Question 2 */}
-                  <Collapsible className="w-full border border-border/50 rounded-md shadow-sm">
-                    <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left font-medium hover:bg-accent/50 rounded-t-md">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-medium">🔎 Q2: Total Revenue from Coffee Sales</span>
-                      </div>
-                      <div className="text-sm text-muted-foreground">What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?</div>
-                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="p-4 pt-0 border-t border-border/50">
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q2: Total Revenue from Coffee Sales</h3>
+                      <p className="text-muted-foreground mb-4">What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?</p>
+                      
                       <Accordion type="single" collapsible className="w-full mb-4">
                         <AccordionItem value="question-2-sql">
                           <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
@@ -555,25 +553,27 @@ ORDER BY 2 DESC;`}
                       </Accordion>
                       
                       <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
                         <img 
                           src="/cq2.png" 
                           alt="Total Revenue Query Result" 
                           className="w-full rounded-md border border-border/50" 
                         />
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
                   
                   {/* Question 3 */}
-                  <Collapsible className="w-full border border-border/50 rounded-md shadow-sm">
-                    <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left font-medium hover:bg-accent/50 rounded-t-md">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-medium">🔎 Q3: Sales Count for Each Product</span>
-                      </div>
-                      <div className="text-sm text-muted-foreground">How many units of each coffee product have been sold?</div>
-                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="p-4 pt-0 border-t border-border/50">
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q3: Sales Count for Each Product</h3>
+                      <p className="text-muted-foreground mb-4">How many units of each coffee product have been sold?</p>
+                      
                       <Accordion type="single" collapsible className="w-full mb-4">
                         <AccordionItem value="question-3-sql">
                           <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
@@ -609,25 +609,27 @@ ORDER BY 2 DESC;`}
                       </Accordion>
                       
                       <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
                         <img 
                           src="/cq3.png" 
                           alt="Sales Count Query Result" 
                           className="w-full rounded-md border border-border/50" 
                         />
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
                   
                   {/* Question 4 */}
-                  <Collapsible className="w-full border border-border/50 rounded-md shadow-sm">
-                    <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left font-medium hover:bg-accent/50 rounded-t-md">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-medium">🔎 Q4: Average Sales Amount per City</span>
-                      </div>
-                      <div className="text-sm text-muted-foreground">What is the average sales amount per customer in each city?</div>
-                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="p-4 pt-0 border-t border-border/50">
+                  <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium mb-4">🔎 Q4: Average Sales Amount per City</h3>
+                      <p className="text-muted-foreground mb-4">What is the average sales amount per customer in each city?</p>
+                      
                       <Accordion type="single" collapsible className="w-full mb-4">
                         <AccordionItem value="question-4-sql">
                           <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
@@ -649,4 +651,102 @@ ORDER BY 2 DESC;`)}
                                 className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
                                 aria-label="Copy code"
                               >
-                                <Copy size={16}
+                                <Copy size={16} />
+                              </button>
+                              <pre className="text-sm">
+{`SELECT 
+    ci.city_name,
+    SUM(s.total) AS total_revenue,
+    COUNT(DISTINCT s.customer_id) AS total_cx,
+    ROUND(SUM(s.total)::NUMERIC / COUNT(DISTINCT s.customer_id)::NUMERIC, 2) AS avg_sale_pr_cx
+FROM sales AS s
+JOIN customers AS c ON s.customer_id = c.customer_id
+JOIN city AS ci ON ci.city_id = c.city_id
+GROUP BY 1
+ORDER BY 2 DESC;`}
+                              </pre>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-base font-medium mb-2">Result:</h4>
+                        <img 
+                          src="/cq4.png" 
+                          alt="Average Sales Amount Query Result" 
+                          className="w-full rounded-md border border-border/50" 
+                        />
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-medium mb-2">Insights:</h4>
+                        <p className="text-muted-foreground">Insights will be added soon.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </section>
+              
+              {/* Conclusion Section */}
+              <section id="conclusion" className="scroll-mt-24 mb-16">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="text-primary" /> Conclusion
+                </h2>
+                <div className="text-muted-foreground space-y-4">
+                  <p>
+                    Based on the weighted scoring analysis and ad hoc requests, we can confidently recommend Pune, Chennai, and Delhi as the top three cities for Monday Coffee's business expansion.
+                  </p>
+                  <p>
+                    Each city offers unique advantages in terms of revenue potential, customer base, and cost efficiency. The data-driven approach ensures that these recommendations are backed by solid evidence rather than intuition alone.
+                  </p>
+                  <p>
+                    By prioritizing these cities, Monday Coffee can strategically allocate resources to maximize growth potential while minimizing risks associated with new location openings.
+                  </p>
+                </div>
+              </section>
+            </div>
+            
+            {/* Sidebar Column */}
+            <div className="hidden lg:block">
+              {/* Project Info Card */}
+              <div className="sticky top-[120px]">
+                <Card className="border border-border/50 overflow-hidden mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-medium text-lg mb-4">Project Details</h3>
+                    <ul className="space-y-3 text-sm">
+                      <li className="flex items-start">
+                        <Monitor className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Tools: </span>
+                          <span>SQL, PostgreSQL, Excel</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <LineChart className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Visualization: </span>
+                          <span>Tableau, Excel Charts</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <GraduationCap className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground">Skills: </span>
+                          <span>Data Analysis, SQL, Business Intelligence</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default NewProject;
