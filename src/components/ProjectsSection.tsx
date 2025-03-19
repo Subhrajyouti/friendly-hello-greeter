@@ -16,6 +16,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 9,
+    title: "Monday Coffee Business Expansion Analysis",
+    description: "Analyzing city performance to determine the best locations for business expansion using data-driven insights",
+    image: "/data_science.jpg",
+    tags: ["SQL", "Data Analysis", "Weighted Scoring", "Decision Making"],
+    slug: "new-project"
+  },
+  {
     id: 8,
     title: "Data Job Market Analysis",
     description: "An in-depth analysis of data science job market trends, salary distributions, and required skills across different industries",
@@ -102,6 +110,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
     ? "/goodcabs-analysis" 
     : project.slug === "data-job-market-analysis"
     ? "/data-job-market-analysis"
+    : project.slug === "new-project"
+    ? "/new-project"
     : `/project/${project.slug}`;
 
   // Determine if external link (opens in new tab) or internal navigation
