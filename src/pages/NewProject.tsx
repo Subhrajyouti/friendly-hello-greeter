@@ -18,7 +18,8 @@ import {
   ListChecks,
   BarChart,
   Copy,
-  CheckCircle2
+  CheckCircle2,
+  Coffee
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -50,8 +51,8 @@ const NewProject = () => {
         {/* Hero Section with Cover Image */}
         <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
           <img 
-            src="/alexander-red-S9qxkJN0f4Q-unsplash.jpg" 
-            alt="Project cover image" 
+            src="/data_science.jpg" 
+            alt="Monday Coffee Business Analysis" 
             className="w-full h-full object-cover brightness-[0.7]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background flex flex-col justify-end pb-20">
@@ -62,15 +63,16 @@ const NewProject = () => {
                   Back to Portfolio
                 </Link>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">New Project Title</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">📊 Monday Coffee Business Expansion Analysis</h1>
               <p className="text-xl text-white/90 mb-6 max-w-2xl">
-                A comprehensive project description will go here.
+                Analyzing city performance to determine the best locations for business expansion using data-driven insights.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Technology 1</Badge>
-                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Technology 2</Badge>
-                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Technology 3</Badge>
-                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Technology 4</Badge>
+                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">SQL</Badge>
+                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Data Analysis</Badge>
+                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Weighted Scoring</Badge>
+                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Decision Making</Badge>
+                <Badge variant="outline" className="bg-white/20 text-white font-normal backdrop-blur-sm hover:-translate-y-0.5 transition-transform">Visualization</Badge>
               </div>
               <Button 
                 variant="outline" 
@@ -79,7 +81,7 @@ const NewProject = () => {
                 className="bg-blue-600/90 hover:bg-blue-700 text-white border-none rounded-md"
               >
                 <a 
-                  href="https://github.com/yourusername/project-repo" 
+                  href="https://github.com/yourusername/monday-coffee-analysis" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
@@ -107,10 +109,10 @@ const NewProject = () => {
                   <Eye className="text-primary" /> Project Overview
                 </h2>
                 <div className="text-muted-foreground mb-4">
-                  This is a placeholder for the project overview. You can edit this section to describe your project in detail.
+                  This project evaluates multiple cities based on business performance metrics to determine the most suitable locations for expansion. By analyzing sales, customer base, spending habits, and rent costs, a weighted scoring system was applied to rank the cities.
                 </div>
                 <div className="text-muted-foreground">
-                  Include background information, the main goals, and a brief summary of what the project accomplishes.
+                  The analysis helps identify cities with the highest growth potential, providing data-driven insights for the expansion of the Monday Coffee business.
                 </div>
               </section>
                 
@@ -122,19 +124,19 @@ const NewProject = () => {
                 <ul className="list-none space-y-2 text-muted-foreground">
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    First objective of this project.
+                    Identify the top 3 cities for business expansion.
                   </li>
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    Second objective of this project.
+                    Apply a data-driven approach to rank cities using key business metrics.
                   </li>
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    Third objective of this project.
+                    Use a weighted scoring methodology to balance revenue potential and cost factors.
                   </li>
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    Fourth objective of this project.
+                    Ad Hoc Requests – Answering key business questions through SQL queries and visualizations to support expansion decisions.
                   </li>
                 </ul>
               </section>
@@ -142,22 +144,74 @@ const NewProject = () => {
               {/* Data Description Section */}
               <section id="data-setup" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <Database className="text-primary" /> Data Description & Data Model
+                  <Database className="text-primary" /> Data Description
                 </h2>
                 <div className="text-muted-foreground mb-4">
-                  Description of the data used in this project and how it was modeled.
+                  The dataset consists of four main tables, each providing essential business insights:
                 </div>
-                <h3 className="text-lg font-medium mb-3">Key Data Relationships:</h3>
-                <ul className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground">
-                  <li>First key data relationship</li>
-                  <li>Second key data relationship</li>
-                  <li>Third key data relationship</li>
-                  <li>Fourth key data relationship</li>
-                </ul>
+
+                <div className="space-y-4 mb-6">
+                  <Card className="border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-4">
+                      <h3 className="font-medium flex items-center gap-2 mb-2">
+                        <Coffee className="h-4 w-4 text-primary" /> Products Table
+                      </h3>
+                      <ul className="list-disc pl-6 space-y-1 text-sm text-muted-foreground">
+                        <li><strong>product_id</strong> – Unique identifier for each product.</li>
+                        <li><strong>product_name</strong> – Name of the product.</li>
+                        <li><strong>price</strong> – Selling price of the product.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-4">
+                      <h3 className="font-medium flex items-center gap-2 mb-2">
+                        <BarChart className="h-4 w-4 text-primary" /> Sales Table
+                      </h3>
+                      <ul className="list-disc pl-6 space-y-1 text-sm text-muted-foreground">
+                        <li><strong>sale_id</strong> – Unique identifier for each sale.</li>
+                        <li><strong>sale_date</strong> – Date when the sale occurred.</li>
+                        <li><strong>customer_id</strong> – ID of the customer making the purchase.</li>
+                        <li><strong>product_id</strong> – ID of the purchased product.</li>
+                        <li><strong>rating</strong> – Customer rating for the product.</li>
+                        <li><strong>total</strong> – Total revenue from the sale.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-4">
+                      <h3 className="font-medium flex items-center gap-2 mb-2">
+                        <Eye className="h-4 w-4 text-primary" /> Customers Table
+                      </h3>
+                      <ul className="list-disc pl-6 space-y-1 text-sm text-muted-foreground">
+                        <li><strong>customer_id</strong> – Unique identifier for each customer.</li>
+                        <li><strong>customer_name</strong> – Name of the customer.</li>
+                        <li><strong>city_id</strong> – ID of the city where the customer resides.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border border-border/50 hover:border-primary/30 transition-all">
+                    <CardContent className="p-4">
+                      <h3 className="font-medium flex items-center gap-2 mb-2">
+                        <Target className="h-4 w-4 text-primary" /> City Table
+                      </h3>
+                      <ul className="list-disc pl-6 space-y-1 text-sm text-muted-foreground">
+                        <li><strong>city_id</strong> – Unique identifier for each city.</li>
+                        <li><strong>city_name</strong> – Name of the city.</li>
+                        <li><strong>city_rank</strong> – Rank of the city based on business potential.</li>
+                        <li><strong>estimated_rent</strong> – Average rent cost per customer.</li>
+                        <li><strong>population</strong> – Total number of residents in the city.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
                 
                 <div className="bg-card/5 p-2 rounded-md overflow-hidden">
                   <img 
-                    src="/data_modelling.png" 
+                    src="/placeholder.svg" 
                     alt="Data Model Schema" 
                     className="w-full h-auto rounded-md shadow-md border border-border/50" 
                   />
@@ -167,241 +221,269 @@ const NewProject = () => {
               {/* Methodology Section */}
               <section id="methodology" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <ListChecks className="text-primary" /> Methodology
+                  <ListChecks className="text-primary" /> Methodology for Selecting Top 3 Cities
                 </h2>
-                <ul className="list-none space-y-2 text-muted-foreground">
+                <div className="text-muted-foreground mb-4">
+                  A weighted scoring system was applied to rank the cities based on critical business factors.
+                </div>
+
+                <h3 className="text-lg font-medium mb-3">Key Metrics Used:</h3>
+                <ul className="list-none space-y-2 text-muted-foreground mb-6">
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    <strong>First step:</strong> Description of the first methodological step.
+                    <strong>Total Sales (50%)</strong> – Higher revenue is prioritized.
                   </li>
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    <strong>Second step:</strong> Description of the second methodological step.
+                    <strong>Estimated Consumers (30%)</strong> – A larger customer base is advantageous.
                   </li>
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    <strong>Third step:</strong> Description of the third methodological step.
+                    <strong>Average Sale per Customer (40%)</strong> – Higher spending per customer is beneficial.
                   </li>
                   <li className="flex items-start">
                     <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    <strong>Fourth step:</strong> Description of the fourth methodological step.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-flex justify-center items-center h-5 w-5 text-[10px] rounded-full bg-primary text-white font-bold mr-2 mt-0.5">✓</span>
-                    <strong>Fifth step:</strong> Description of the fifth methodological step.
+                    <strong>Average Rent per Customer (-20%)</strong> – Higher rent negatively impacts the score.
                   </li>
                 </ul>
-              </section>
                 
-              {/* Dashboard Section */}
-              <section id="dashboard" className="scroll-mt-24 mb-16">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <Monitor className="text-primary" /> Dashboard
-                </h2>
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-                  <CardContent className="p-0">
-                    <div className="aspect-video w-full">
-                      <img 
-                        src="/placeholder.svg" 
-                        alt="Project Dashboard" 
-                        className="w-full h-full object-cover" 
-                      />
+                <Card className="border border-border/50 hover:border-primary/30 transition-all mb-6">
+                  <CardContent className="p-4">
+                    <h3 className="font-medium mb-2">Formula Used:</h3>
+                    <p className="text-sm text-muted-foreground mb-2">Each city's weighted score was calculated as:</p>
+                    <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                      <button 
+                        onClick={() => copyToClipboard("Final Score = (Total Sales * 0.5) + (Estimated Consumers * 0.3) + (Avg Sale per Customer * 0.4) - (Avg Rent per Customer * 0.2)")}
+                        className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                        aria-label="Copy code"
+                      >
+                        <Copy size={16} />
+                      </button>
+                      <pre className="text-sm">
+                        Final Score = (Total Sales * 0.5) + (Estimated Consumers * 0.3) + (Avg Sale per Customer * 0.4) - (Avg Rent per Customer * 0.2)
+                      </pre>
                     </div>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      This formula balances revenue generation potential with cost efficiency, ensuring the best cities for expansion are chosen.
+                    </p>
                   </CardContent>
                 </Card>
+              </section>
                 
-                <div className="mt-6">
-                  <h3 className="text-xl font-medium mb-4">Dashboard Highlights</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <FeatureCard title="First feature">
-                      Description of the first feature
-                    </FeatureCard>
-                    <FeatureCard title="Second feature">
-                      Description of the second feature
-                    </FeatureCard>
-                    <FeatureCard title="Third feature">
-                      Description of the third feature
-                    </FeatureCard>
-                    <FeatureCard title="Fourth feature">
-                      Description of the fourth feature
-                    </FeatureCard>
-                    <FeatureCard title="Fifth feature">
-                      Description of the fifth feature
-                    </FeatureCard>
-                  </div>
+              {/* Top 3 Cities Section */}
+              <section id="top-cities" className="scroll-mt-24 mb-16">
+                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+                  <Rocket className="text-primary" /> Top 3 Cities for Expansion
+                </h2>
+                <div className="text-muted-foreground mb-6">
+                  After applying the weighted scoring system, the top 3 cities for business expansion are:
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                  <TopCityCard 
+                    position="🥇" 
+                    city="Pune" 
+                    description="Strong revenue, high customer spending, and reasonable rent costs."
+                  />
+                  <TopCityCard 
+                    position="🥈" 
+                    city="Chennai" 
+                    description="Large customer base with solid sales performance."
+                  />
+                  <TopCityCard 
+                    position="🥉" 
+                    city="Delhi" 
+                    description="High market potential despite moderate spending per customer."
+                  />
+                </div>
+
+                <h3 className="text-lg font-medium mb-4">City Metrics Table</h3>
+                <div className="overflow-x-auto mb-6">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="bg-accent/50">
+                        <th className="border border-border p-2 text-left">City Name</th>
+                        <th className="border border-border p-2 text-left">Total Sales</th>
+                        <th className="border border-border p-2 text-left">Estimated Consumers</th>
+                        <th className="border border-border p-2 text-left">Avg Sale per Customer</th>
+                        <th className="border border-border p-2 text-left">Avg Rent per Customer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="hover:bg-accent/20">
+                        <td className="border border-border p-2">Pune</td>
+                        <td className="border border-border p-2">1,258,290</td>
+                        <td className="border border-border p-2">1,875,000</td>
+                        <td className="border border-border p-2">24,198</td>
+                        <td className="border border-border p-2">294</td>
+                      </tr>
+                      <tr className="hover:bg-accent/20">
+                        <td className="border border-border p-2">Chennai</td>
+                        <td className="border border-border p-2">944,120</td>
+                        <td className="border border-border p-2">2,775,000</td>
+                        <td className="border border-border p-2">22,479</td>
+                        <td className="border border-border p-2">407</td>
+                      </tr>
+                      <tr className="hover:bg-accent/20">
+                        <td className="border border-border p-2">Bangalore</td>
+                        <td className="border border-border p-2">860,110</td>
+                        <td className="border border-border p-2">3,075,000</td>
+                        <td className="border border-border p-2">22,054</td>
+                        <td className="border border-border p-2">762</td>
+                      </tr>
+                      <tr className="hover:bg-accent/20">
+                        <td className="border border-border p-2">Delhi</td>
+                        <td className="border border-border p-2">750,420</td>
+                        <td className="border border-border p-2">7,750,000</td>
+                        <td className="border border-border p-2">11,036</td>
+                        <td className="border border-border p-2">331</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="bg-card/5 p-2 rounded-md overflow-hidden">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Final Visualization" 
+                    className="w-full h-auto rounded-md shadow-md border border-border/50" 
+                  />
                 </div>
               </section>
                 
-              {/* Code Example Section */}
-              <section id="code-examples" className="scroll-mt-24 mb-16">
+              {/* Ad Hoc Requests Section */}
+              <section id="ad-hoc-requests" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <Database className="text-primary" /> Code Examples
+                  <Database className="text-primary" /> Ad Hoc Requests
                 </h2>
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
+                
+                <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all mb-8">
                   <CardContent className="p-6">
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value="example-1">
+                    <h3 className="text-lg font-medium mb-4">🔹 Question 1: [Placeholder for question]</h3>
+                    
+                    <Accordion type="single" collapsible className="w-full mb-4">
+                      <AccordionItem value="question-1-sql">
                         <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          First Code Example
+                          SQL Query
                         </AccordionTrigger>
                         <AccordionContent>
                           <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
                             <button 
-                              onClick={() => copyToClipboard("console.log('Hello World');")}
+                              onClick={() => copyToClipboard("-- SQL query will be added here")}
                               className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
                               aria-label="Copy code"
                             >
                               <Copy size={16} />
                             </button>
                             <pre className="text-sm">
-                              {`console.log('Hello World');`}
-                            </pre>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="example-2">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          Second Code Example
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
-                            <button 
-                              onClick={() => copyToClipboard("const double = (x) => x * 2;")}
-                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
-                              aria-label="Copy code"
-                            >
-                              <Copy size={16} />
-                            </button>
-                            <pre className="text-sm">
-                              {`const double = (x) => x * 2;`}
+                              {`-- SQL query will be added here`}
                             </pre>
                           </div>
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
+                    
+                    <div className="mb-4">
+                      <h4 className="text-base font-medium mb-2">Visualization:</h4>
+                      <img 
+                        src="/q1.jpg" 
+                        alt="Question 1 Visualization" 
+                        className="w-full rounded-md border border-border/50" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-base font-medium mb-2">Insights:</h4>
+                      <p className="text-muted-foreground">Insights will be added soon.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all mb-8">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-medium mb-4">🔹 Question 2: [Placeholder for question]</h3>
+                    
+                    <Accordion type="single" collapsible className="w-full mb-4">
+                      <AccordionItem value="question-2-sql">
+                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
+                          SQL Query
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                            <button 
+                              onClick={() => copyToClipboard("-- SQL query will be added here")}
+                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                              aria-label="Copy code"
+                            >
+                              <Copy size={16} />
+                            </button>
+                            <pre className="text-sm">
+                              {`-- SQL query will be added here`}
+                            </pre>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                    
+                    <div className="mb-4">
+                      <h4 className="text-base font-medium mb-2">Visualization:</h4>
+                      <img 
+                        src="/q2.jpg" 
+                        alt="Question 2 Visualization" 
+                        className="w-full rounded-md border border-border/50" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-base font-medium mb-2">Insights:</h4>
+                      <p className="text-muted-foreground">Insights will be added soon.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="overflow-hidden border border-border/50 hover:border-primary/30 transition-all mb-8">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-medium mb-4">🔹 Question 3: [Placeholder for question]</h3>
+                    
+                    <Accordion type="single" collapsible className="w-full mb-4">
+                      <AccordionItem value="question-3-sql">
+                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
+                          SQL Query
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="bg-card/20 p-4 rounded-md overflow-x-auto relative">
+                            <button 
+                              onClick={() => copyToClipboard("-- SQL query will be added here")}
+                              className="absolute right-2 top-2 p-1 rounded hover:bg-primary/10"
+                              aria-label="Copy code"
+                            >
+                              <Copy size={16} />
+                            </button>
+                            <pre className="text-sm">
+                              {`-- SQL query will be added here`}
+                            </pre>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                    
+                    <div className="mb-4">
+                      <h4 className="text-base font-medium mb-2">Visualization:</h4>
+                      <img 
+                        src="/q3.jpg" 
+                        alt="Question 3 Visualization" 
+                        className="w-full rounded-md border border-border/50" 
+                      />
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-base font-medium mb-2">Insights:</h4>
+                      <p className="text-muted-foreground">Insights will be added soon.</p>
+                    </div>
                   </CardContent>
                 </Card>
               </section>
               
-              {/* Key Insights & Recommendations Section */}
-              <section id="insights" className="scroll-mt-24 mb-16">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <Lightbulb className="text-primary" /> Key Insights & Recommendations
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <InsightCard title="1. First Insight">
-                    <p className="mb-2">Description of the first insight from the project.</p>
-                    <p className="font-medium text-primary">Recommendation: First recommendation based on this insight.</p>
-                  </InsightCard>
-                  
-                  <InsightCard title="2. Second Insight">
-                    <p className="mb-2">Description of the second insight from the project.</p>
-                    <p className="font-medium text-primary">Recommendation: Second recommendation based on this insight.</p>
-                  </InsightCard>
-                  
-                  <InsightCard title="3. Third Insight">
-                    <p className="mb-2">Description of the third insight from the project.</p>
-                    <p className="font-medium text-primary">Recommendation: Third recommendation based on this insight.</p>
-                  </InsightCard>
-                  
-                  <InsightCard title="4. Fourth Insight">
-                    <p className="mb-2">Description of the fourth insight from the project.</p>
-                    <p className="font-medium text-primary">Recommendation: Fourth recommendation based on this insight.</p>
-                  </InsightCard>
-                </div>
-              </section>
-                
-              {/* Challenges & Learnings Section */}
-              <section id="challenges" className="scroll-mt-24 mb-16">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <GraduationCap className="text-primary" /> Challenges & Learnings
-                </h2>
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-                  <CardContent className="p-6">
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value="challenge-1">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          First Challenge
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <p className="text-muted-foreground mb-2">
-                            Description of the first challenge encountered in this project.
-                          </p>
-                          <p className="text-muted-foreground">
-                            <span className="font-medium">Solution:</span> How the first challenge was addressed.
-                          </p>
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="challenge-2">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          Second Challenge
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <p className="text-muted-foreground mb-2">
-                            Description of the second challenge encountered in this project.
-                          </p>
-                          <p className="text-muted-foreground">
-                            <span className="font-medium">Solution:</span> How the second challenge was addressed.
-                          </p>
-                        </AccordionContent>
-                      </AccordionItem>
-                      
-                      <AccordionItem value="challenge-3">
-                        <AccordionTrigger className="hover:text-primary text-base font-medium py-3">
-                          Third Challenge
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <p className="text-muted-foreground mb-2">
-                            Description of the third challenge encountered in this project.
-                          </p>
-                          <p className="text-muted-foreground">
-                            <span className="font-medium">Solution:</span> How the third challenge was addressed.
-                          </p>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </CardContent>
-                </Card>
-              </section>
-                
-              {/* Project Files & Links Section */}
-              <section id="files" className="scroll-mt-24 mb-16">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <Link2 className="text-primary" /> Project Files & Links
-                </h2>
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
-                  <CardContent className="p-6 flex flex-col space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <Monitor className="text-primary h-5 w-5" />
-                      <a 
-                        href="#" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline flex items-center"
-                      >
-                        Live Demo Link
-                        <ExternalLink className="h-4 w-4 ml-1" />
-                      </a>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <Github className="text-primary h-5 w-5" />
-                      <a 
-                        href="#" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline flex items-center"
-                      >
-                        GitHub Repository
-                        <ExternalLink className="h-4 w-4 ml-1" />
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </section>
-                
               {/* Conclusion Section */}
               <section id="conclusion" className="scroll-mt-24 mb-16">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
@@ -411,31 +493,31 @@ const NewProject = () => {
                   <CardContent className="p-6">
                     <h3 className="text-lg font-medium mb-3">Key Takeaways</h3>
                     <ul className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground">
-                      <li>First key takeaway from this project</li>
-                      <li>Second key takeaway from this project</li>
-                      <li>Third key takeaway from this project</li>
-                      <li>Fourth key takeaway from this project</li>
+                      <li>Data-driven approach provides objective criteria for business expansion decisions</li>
+                      <li>Weighted scoring system balances revenue potential with operational costs</li>
+                      <li>Pune, Chennai, and Delhi emerge as the most promising locations for expansion</li>
+                      <li>Each city offers unique advantages in terms of customer base, spending patterns, and cost structure</li>
                     </ul>
                     
                     <h3 className="text-lg font-medium mb-3">Next Steps</h3>
                     <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                      <li>First potential next step for this project</li>
-                      <li>Second potential next step for this project</li>
-                      <li>Third potential next step for this project</li>
-                      <li>Fourth potential next step for this project</li>
+                      <li>Conduct detailed market research in the top 3 cities to validate findings</li>
+                      <li>Develop tailored business plans for each expansion location</li>
+                      <li>Assess real estate options and local operational requirements</li>
+                      <li>Create a phased expansion timeline starting with the highest-scoring city</li>
                     </ul>
                   </CardContent>
                 </Card>
               </section>
             </div>
             
-            {/* Sidebar Column - Now scrolls with the page and is positioned on the right */}
+            {/* Sidebar Column */}
             <div className="lg:col-span-1">
               <div className="space-y-8">
                 <Card className="overflow-hidden border border-border/50 shadow-md hover:shadow-xl transition-all">
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Project image" 
+                    src="/data_science.jpg" 
+                    alt="Monday Coffee Analysis" 
                     className="w-full h-48 object-cover"
                   />
                 </Card>
@@ -448,19 +530,19 @@ const NewProject = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">First key insight highlight</span>
+                        <span className="text-sm">Weighted scoring methodology for objective decision-making</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">Second key insight highlight</span>
+                        <span className="text-sm">SQL-based analysis of business performance metrics</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">Third key insight highlight</span>
+                        <span className="text-sm">Data-driven city ranking for strategic expansion</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="inline-flex mt-1 justify-center items-center h-4 w-4 text-[8px] rounded-full bg-primary text-white font-bold">✓</span>
-                        <span className="text-sm">Fourth key insight highlight</span>
+                        <span className="text-sm">Balance of revenue potential and operational costs</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -512,7 +594,20 @@ const NewProject = () => {
   );
 };
 
-// Feature Card Component
+// Top City Card Component
+const TopCityCard = ({ position, city, description }: { position: string; city: string; description: string }) => (
+  <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
+    <CardContent className="p-6">
+      <div className="flex items-center mb-2">
+        <span className="text-3xl mr-3">{position}</span>
+        <h3 className="font-medium text-xl">{city}</h3>
+      </div>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </CardContent>
+  </Card>
+);
+
+// Feature Card Component (kept for consistency with other sections)
 const FeatureCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
     <CardContent className="p-6">
@@ -522,7 +617,7 @@ const FeatureCard = ({ title, children }: { title: string; children: React.React
   </Card>
 );
 
-// Insight Card Component
+// Insight Card Component (kept for consistency with other sections)
 const InsightCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-border/50 hover:border-primary/30 shadow-md">
     <CardContent className="p-6">

@@ -1,3 +1,4 @@
+
 import { ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,10 +17,10 @@ interface Project {
 const projects: Project[] = [
   {
     id: 9,
-    title: "New Project",
-    description: "A template for a new project that you can customize with your own content",
-    image: "/placeholder.svg",
-    tags: ["Template", "Project", "Placeholder", "Custom"],
+    title: "Monday Coffee Business Expansion Analysis",
+    description: "Analyzing city performance to determine the best locations for business expansion using data-driven insights",
+    image: "/data_science.jpg",
+    tags: ["SQL", "Data Analysis", "Weighted Scoring", "Decision Making"],
     slug: "new-project"
   },
   {
