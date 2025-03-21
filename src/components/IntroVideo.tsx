@@ -47,13 +47,14 @@ const IntroVideo = () => {
             {videoLoaded ? (
               <iframe 
                 ref={iframeRef}
-                src="https://player.vimeo.com/video/1067891260?h=f783e00d39"
+                src="https://www.youtube.com/embed/4mBkBowXgkY?si=DjA9MbzZYRqcPf9d&amp;controls=0"
                 className="w-full h-full absolute inset-0 rounded-2xl"
                 frameBorder="0"
-                allow="autoplay; fullscreen"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
                 loading="lazy"
-                title="Introduction Video"
+                title="YouTube video player"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-muted/20">
